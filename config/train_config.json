@@ -1,0 +1,49 @@
+{
+    "train": {
+      "seed": 256,
+      "used_pretrain": true,
+      "learning_rate": 1e-5,
+      "load_from_checkpoint": false,
+      "lr_scheduler" : "constant",
+      "lr_warmup_steps": 500,
+      "max_train_steps" : null,
+      "num_train_epochs": 2,
+      "gradient_accumulation_steps": 1,
+      "snr_gamma": null,
+      "checkpointing_steps":100,
+      "output_dir": "checkpoint_dir",
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.999,
+      "adam_weight_decay": 1e-2,
+      "adam_epsilon": 1e-8
+    },
+    "data": {
+      "data_name" : "Jack_Ma+Kathleen",
+      "txt_file": "/data/hypertext/sharpwang/dataset/TalkingHead/CelebV/CelebV/Jack_Ma/data.txt",
+      "data_root": "/data/hypertext/sharpwang/dataset/TalkingHead/CelebV/CelebV/",
+      "size": 512,
+      "resolution":512,
+      "center_crop":false,
+      "random_flip":true,
+      "train_batch_size":16,
+      "dataloader_num_workers":4
+    },
+    "model": {
+      "pretrained_model_name_or_path": "/data/hypertext/sharpwang/llm/stable-diffusion-v1-4",
+      "freeze_vae":true,
+      "freeze_vision_tower":true,
+      "noise_offset":0,
+      "input_perturbation": 0,
+      "prediction_type": "epsilon",
+      "use_spk_conditioned_encoder": true,
+      "use_noise_scaled_mas": true,
+      "use_mel_posterior_encoder": false,
+      "use_duration_discriminator": true,
+      "inter_channels": 192,
+      "hidden_channels": 192,
+      "filter_channels": 768,
+      "revision": null,
+      "non_ema_revision": null
+    }
+  }
+  
